@@ -4,7 +4,7 @@
 //export default  导出函数引入的时候 不需要加{}
 //export   需要加{}
 
-console.log('浅拷贝 合并对象 Object.assign')
+console.log('浅拷贝 合并对象 3.Object.assign')
 let arr = {"aa":11,"bb":22}
 let data = Object.assign({},arr,{
     "a":1,
