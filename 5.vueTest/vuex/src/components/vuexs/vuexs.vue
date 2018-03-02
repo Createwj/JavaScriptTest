@@ -39,7 +39,7 @@
         setSinger: 'SET_SINGER'
       }),
       ...mapActions([
-        'selectPlay'
+        'selectPlay'   // mapAction  相当于事件 设置对应的参数 vuex提交commit
       ])
     }
   }

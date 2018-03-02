@@ -9,7 +9,7 @@
   export default {
     created() {
       this.date = this.$route.params
-      console.log(this.$route)
+      console.log(this.$route)  // 父组件通过 url传递过来的参数
       console.log(this.$route.params)
     },
     data() {

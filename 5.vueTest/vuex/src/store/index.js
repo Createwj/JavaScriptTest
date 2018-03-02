@@ -13,7 +13,7 @@ const dubug = process.env.NODE_ENV !== 'production'
 export default new Vuex.Store({
   actions,
   getters,
-  state,
+  state,  //  各种状态
   mutations,
   strict: dubug,
   plugins: dubug ? [createLogger()] : []

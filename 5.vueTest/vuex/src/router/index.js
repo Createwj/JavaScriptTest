@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import order from '@/components/order/order'
 import info from '@/components/info/info'
 import disc from '@/components/disc/disc'
+import log from '@/components/log/log'
 import song from '@/components/song/song'
 import singer from '@/components/singer/singer'
 import vuexs from '@/components/vuexs/vuexs'
@@ -14,7 +15,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'order',
+      name: 'order',   // 默认路径
       component: order,
       children: [
         {
@@ -22,6 +23,10 @@ export default new Router({
           component: disc
         }
       ]
+    },
+    {
+      path: '/log',   // 登录页面  用于测试axios拦截器
+      component: log
     },
     {
       path: '/info',

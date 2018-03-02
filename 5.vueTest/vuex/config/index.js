@@ -10,7 +10,7 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {},       // webpack设置前端跨域问题
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST

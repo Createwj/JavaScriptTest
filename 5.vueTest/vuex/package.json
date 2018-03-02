@@ -13,6 +13,7 @@
   "dependencies": {
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
+    "axios": "^0.16.1",
     "vue-verify-plugin": "^2.0.2",
     "vuex": "^2.3.1"
   },
