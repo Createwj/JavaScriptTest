@@ -1,0 +1,6 @@
+import * as types from './mutation-types'
+
+export const selectPlay = function({commit}, {list, index}) {
+  commit(types.SET_PLAYING_STATE, list)
+  commit(types.SET_FULL_SCREEN, index)
+}
