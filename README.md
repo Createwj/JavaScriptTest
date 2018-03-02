@@ -15,3 +15,5 @@ undefined null number string boolean symbol
 函数本身作用域。
 闭包定义时的作用域。
 全局作用域。
+
+## 项目中遇到的坑

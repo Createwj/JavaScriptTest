@@ -29,4 +29,6 @@ console.log(arr)
 console.log(arr.slice(1))  // 不修改原数组
 console.log(arr+ '--')
 console.log(arr = arr.splice(0,2).concat(arr)) // 直接操作原数组
-console.log(arr)
+console.log(arr.splice(2))
+
+
