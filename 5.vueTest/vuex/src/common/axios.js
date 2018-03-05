@@ -1,30 +1,34 @@
 import axios from 'axios'
-axios.interceptors.request.use(
-  config => {
-    if (token) {  // 每次发送请求之前判断是否存在token，如果存在，则统一在http请求的header都加上token，不用每次请求都手动添加了
-      config.headers.Authorization = token;
-    }
-    return config;
-  },
-  err => {
-    return Promise.reject(err);
-  });
+import router from "../router"
+// import qs from 'qs'
+// 配置默认的host,假如你的API host是：http://api.htmlx.club
+// axios.defaults.baseURL = 'http://api.htmlx.club'
 
-// http response 服务器响应拦截器，这里拦截401错误，并重新跳入登页重新获取token
-axios.interceptors.response.use(
-  response => {
-    return response;
-  },
-  error => {
-    if (error.response) {
-      switch (error.response.status) {
-        case 401:
-          // 这里写清除token的代码
-          router.replace({
-            path: 'login',
-            query: {redirect: router.currentRoute.fullPath}//登录成功后跳入浏览的当前页面
-          })
-      }
-    }
-    return Promise.reject(error.response.data)
-  });
+// 添加请求拦截器
+axios.interceptors.request.use(function (config) {
+  // 在发送请求之前做些什么
+
+  console.log(config)
+  console.log('在发送请求之前做些什么')
+  return config
+}, function (error) {
+  // 对请求错误做些什么
+  console.log('对请求错误做些什么')
+  return Promise.reject(error)
+})
+
+// 添加响应拦截器
+axios.interceptors.response.use(function (response) {
+  // 对响应数据做点什么
+  console.log('对响应数据做点什么')
+  console.log()
+  router.push({
+    path: "/log"
+  })
+  return response
+}, function (error) {
+  // 对响应错误做点什么
+  console.log('对响应错误做点什么')
+
+  return Promise.reject(error)
+})

@@ -6,6 +6,7 @@ import router from './router'
 import store from './store'
 import verify from 'vue-verify-plugin'
 import axios from 'axios'
+import './common/axios'
 Vue.prototype.$axios = axios
 
 Vue.use(verify, {

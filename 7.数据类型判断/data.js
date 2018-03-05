@@ -34,9 +34,9 @@ console.log(i.constructor)
  ---- constructor无法识别undefined  null
  **/
 // let f = undefined
-// console.log(f.constructor)
+// console.page(f.constructor)
 // let g = null
-// console.log(g.constructor)
+// console.page(g.constructor)
 
 
 
@@ -53,11 +53,11 @@ console.log(toString.call([]))
 
 
 //JQ    $.type
-// console.log($.type(1))
-// console.log($.type('1'))
-// console.log($.type(false))
-// console.log($.type(null))
-// console.log($.type(undefined))
-// console.log($.type([]))
-// console.log($.type({}))
-// console.log($.type(function(){}))
+// console.page($.type(1))
+// console.page($.type('1'))
+// console.page($.type(false))
+// console.page($.type(null))
+// console.page($.type(undefined))
+// console.page($.type([]))
+// console.page($.type({}))
+// console.page($.type(function(){}))
