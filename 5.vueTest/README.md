@@ -70,7 +70,7 @@ const router = new VueRouter({
 })
 ```
 
-### 路由懒加载
+### 路由懒加载   按需加载  优化性能
 ```
 声明不引用
 const UserCenter = (resolve) => {
