@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// require('react-dom')
+// require('11.react-dom')
 let hello = ReactDOM.render(
     <div>
         <h1>菜鸟教程 </h1>
