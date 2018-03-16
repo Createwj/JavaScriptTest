@@ -2,10 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
 </head>
 <body>
+<label for="inner_series_select">机动机列表</label>
+<select class="selectpicker" data-live-search="true" id="inner_series_select">
+    {% for i in selectpicker %}
+    <option data-token="{{ i.asset_number }}">{{ i.asset_number }}</option>
+    {% endfor %}
+</select>
 <script>
+
+
     //监听浏览器返回按钮牛
     // 监听安卓手机返回物理按键
     // https://segmentfault.com/a/1190000013700474

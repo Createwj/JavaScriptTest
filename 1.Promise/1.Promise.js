@@ -25,8 +25,8 @@ function runAsync2(){
 
 runAsync1().then((data)=>{
     console.log(data)
-return runAsync2()
-}).then((data)=>{
+    return runAsync2()
+},(data)=>{console.log('')}).then((data)=>{
     console.log(data)
 });
 
