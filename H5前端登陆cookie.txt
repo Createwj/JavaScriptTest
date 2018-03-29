@@ -1,0 +1,41 @@
+环境地址
+/home/uicpsadmin/apache-USTradeNew/webapps/USTrade
+北京H5正式环境  http://tc.bjjt.cn/customer_h5/index.htm  43.254.24.26:8080/USOrder/customerh5/index.htm
+北京H5阿里云测试环境  http://123.57.153.223:8088/USOrder/customerh5/index.htm
+北京H5政务云云测试环境  http://43.254.24.46/USOrder/customerh5/index.htm
+
+哈尔滨阿里云测试后台访问地址  http://139.129.110.7:8080/USTrade/web/pages/frame.htm
+
+北京阿里云测试后台访问地址  http://123.57.153.223:8088/USOrder/web/pages/login.htm
+
+北京政务云后台访问地址 http://43.254.24.46/USOrder/web/pages/login.htm
+
+http://git.benefitunion.cn/users/sign_in
+
+python资源
+https://github.com/cd-dongzi/free-programming-books-zh_CN#python
+
+linux
+https://linuxtools-rst.readthedocs.io/zh_CN/latest/
+
+分享社区
+https://www.fragmentwall.com/trending
+
+function setCookie(e, r) {
+    var i = 30, n = new Date;
+    n.setTime(n.getTime() + 24 * i * 60 * 60 * 1e3), document.cookie = e + "=" + escape(r) + ";expires=" + n.toGMTString() + ";path=/"
+}
+function getCookie(e) {
+    var r, i = new RegExp("(^| )" + e + "=([^;]*)(;|$)");
+    return (r = document.cookie.match(i)) ? unescape(r[2]) : null
+}
+function clearCookie() {
+    var e = document.cookie.match(/[^ =;]+(?=\=)/g);
+    if (e) {
+        var r = new Date;
+        r.setTime(r.getTime() - 1e4);
+        for (var i = 0; i < e.length; i++)document.cookie = e[i] + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/"
+    }
+}
+clearCookie()
+setCookie('captcha-key', '67e245db51d94af49ae6677d8ae689ba')
