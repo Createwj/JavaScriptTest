@@ -1,7 +1,12 @@
-// http://www.cnblogs.com/lvdabao/p/es6-promise-1.html
-//使用webstorm打开  按住Ctrl + Shift + F10 执行代码（部分笔记本按住Fn）
-// resolve 用法
-setTimeout(()=>{console.log("resolve----------")},2000)
+setTimeout(() => {
+    console.log("resolve----------");
+}, 2000);
+
+// setTimeout(function(){
+//     console.log('123')
+// }, 200);
+
+
 function runAsync1(){
     let p = new Promise(function(resolve, reject){
         //做一些异步操作
@@ -30,6 +35,9 @@ runAsync1().then((data)=>{
     console.log(data)
 });
 
+// http://www.cnblogs.com/lvdabao/p/es6-promise-1.html
+//使用webstorm打开  按住Ctrl + Shift + F10 执行代码（部分笔记本按住Fn）
+// resolve 用法
 // reject 用法
 console.log("Reject----------")
 function getRandNum(){
