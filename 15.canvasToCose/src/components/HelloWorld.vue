@@ -15,15 +15,10 @@
   import html2canvas from 'html2canvas'
 export default {
   name: 'HelloWorld',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
-  },
-  created(){
+  created(){   // 初始化数据
 
   },
-  mounted(){
+  mounted(){  //  dom加载已经完成  进行一些页面样式 数据的动态修改
 
         // let canvas = document.getElementById('canvas')
         // let ctx = canvas.getContext('2d')
@@ -41,15 +36,16 @@ export default {
 
 // 使用html2canvas 将html 保存
         html2canvas(
-
-          document.querySelector("#capture")
-
+          document.querySelector("#capture"),
+          {                       // 允许跨域   允许污染画布
+            useCORS:true,         // image.setAttribute('crossorigin', 'anonymous')
+            allowTaint: true
+          }
         ).then(canvas=>{
           document.body.appendChild(canvas)
           }
 
         );
-
   }
 }
 </script>
