@@ -12,7 +12,7 @@
 </template>
 
 <script>
-  import html2canvas from 'html2canvas'
+import html2canvas from 'html2canvas'
 export default {
   name: 'HelloWorld',
   created(){   // 初始化数据
@@ -33,7 +33,6 @@ export default {
         //     document.getElementById('image').src = canvas.toDataURL('image/png')
         // }
 
-
 // 使用html2canvas 将html 保存
         html2canvas(
           document.querySelector("#capture"),
@@ -44,13 +43,10 @@ export default {
         ).then(canvas=>{
           document.body.appendChild(canvas)
           }
-
         );
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h1, h2 {
   font-weight: normal;
