@@ -7,7 +7,14 @@
 <body>
 
 <script>
-
+//    https://quanzi.qufaya.com/pointsshop/goods/list?token=d95c9ffe-39ae-4ee3-a6ab-500759d7722e
+fetch(' https://quanzi.qufaya.com/pointsshop/goods/list?token=d95c9ffe-39ae-4ee3-a6ab-500759d7722e') // 返回一个Promise对象
+  .then((res)=>{
+    return res.text() // res.text()是一个Promise对象
+  })
+  .then((res)=>{
+    console.log(res) // res是最终的结果
+  })
 </script>
 </body>
 </html>
