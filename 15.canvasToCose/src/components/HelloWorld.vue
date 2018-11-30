@@ -18,22 +18,7 @@ export default {
   created(){   // 初始化数据
 
   },
-  mounted(){  //  dom加载已经完成  进行一些页面样式 数据的动态修改
-
-        // let canvas = document.getElementById('canvas')
-        // let ctx = canvas.getContext('2d')
-        // let image = new Image()
-        // image.setAttribute('crossorigin', 'anonymous')
-        //
-        //
-        // image.src = 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3497300994,2503543630&fm=27&gp=0.jpg'
-        //
-        // image.onload = function() {
-        //     ctx.drawImage(image, 0, 0)
-        //     document.getElementById('image').src = canvas.toDataURL('image/png')
-        // }
-
-// 使用html2canvas 将html 保存
+  mounted(){ 
         html2canvas(
           document.querySelector("#capture"),
           {                       // 允许跨域   允许污染画布
