@@ -18,7 +18,7 @@ export default {
   created(){   // 初始化数据
 
   },
-  mounted(){ 
+  mounted(){
         html2canvas(
           document.querySelector("#capture"),
           {                       // 允许跨域   允许污染画布
@@ -26,7 +26,7 @@ export default {
             allowTaint: true
           }
         ).then(canvas=>{
-          document.body.appendChild(canvas)
+            document.body.appendChild(canvas)
           }
         );
           this.convertImgToBase64('https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3497300994,2503543630&fm=27&gp=0.jpg', function(base64Img){
@@ -40,13 +40,13 @@ export default {
           img = new Image;
           img.crossOrigin = 'Anonymous';
           img.onload = function(){
-          canvas.height = img.height;
-          canvas.width = img.width;
-          ctx.drawImage(img,0,0);
-          var dataURL = canvas.toDataURL(outputFormat || 'image/png');
-          callback.call(this, dataURL);
-          canvas = null;
-        };
+            canvas.height = img.height;
+            canvas.width = img.width;
+            ctx.drawImage(img,0,0);
+            var dataURL = canvas.toDataURL(outputFormat || 'image/png');
+            callback.call(this, dataURL);
+            canvas = null;
+          };
         img.src = url;
       }
   }

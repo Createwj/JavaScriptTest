@@ -12,6 +12,7 @@ export default {
 
 <style>
 #app {
-
+ width: 10rem;
+  margin: 0 auto;
 }
 </style>

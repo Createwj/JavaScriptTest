@@ -1,5 +1,3 @@
-
-
 <template>
 <div class="wrapper">
   <div id="info"></div>
@@ -135,6 +133,15 @@
         ctx.fillStyle="#FFFFFF";
         ctx.fillText(i,247+Math.sin(canalpha)*350,605-(1-Math.cos(canalpha))*350);
       }
+
+
+
+
+
+
+
+
+
       /**
        * 判断游戏是否结束
        * **/
