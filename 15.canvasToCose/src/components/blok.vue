@@ -19,11 +19,11 @@
       document.getElementById('canvas').setAttribute('height',`${winHeight}px`)
 
 
-      var ctx;//工具
-      var canvas;//画布
-      var canalpha=0;
-      var cirradius=100;
-      var smciradius=15;
+      var ctx; //工具
+      var canvas; //画布
+      var canalpha=0;  // 旋转角度
+      var cirradius=100;  // 半径
+      var smciradius=15;  // 小球半径
       var ani=false; //动画是否在进行中
       var speed=30;  //针的速度
       var ins=false;  //是否可以触发insert动画
@@ -31,12 +31,20 @@
       var num=1;  //针的编号
       var angel=[];  // 各针停留时的角度数组
       angel[0]=0;  //初始化为1根针时设定，可改变
-      var speed2=150;  //旋转速度
+      var speed2=50;  //旋转速度
       var over=false;  //游戏结束标志
       var INTERID;  //周期函数ID
-
+      var nums = 0;
+      var numsi = 19;
       function drawmap() {
-        ctx.save();
+        // ctx.save();ctx.restore();
+
+
+        if(!ins) {
+          drawNails(1);  //  绘制小球
+        }else{
+         nailacts(num);   // 移动小球
+        }
         ctx.fillStyle = "rgba(50%,25%,25%,0.9)";
         ctx.translate(winWidth/2, 250);  // 设置旋转中心
         ctx.rotate(canalpha);           // 设置旋转角度
@@ -48,7 +56,7 @@
         var img0=new Image();
         img.src="https://ifish.im/games/jfcd/images/roata-sheet0.png";
         img0.src="https://ifish.im/games/jfcd/images/cutitinfipt1-sheet0.png";
-        ctx.restore();
+
         // 初始化木桶
 
 
@@ -58,34 +66,22 @@
         ctx.rotate(Math.PI);
         ctx.drawImage(img0,-winWidth/2-12,-410,24,115)
         ctx.restore();
+        ctx.closePath();
 
-
-
-
-
-        if(!ins) {
-
-          drawNail(num);
-
-        }else{
-          nailact(num);
-        }
-        //使用for循环去 插进去内容
+        // 使用 for 循环去 插进去 内容 //
         for (var j = 1; j <= angel.length; j++) {
-          // ctx.save();
+          console.log(angel)
           // ctx.arc(winWidth/2, 250, cirradius, 0, Math.PI * 2, true);
-          // ctx.rotate(Math.PI);
-          ctx.drawImage(img0,winWidth/2 + Math.sin(angel[j]) * 100, 450 - (200 - Math.cos(angel[j]) * 100),24,115)
+          // ctx.rotate(0.1);
+          ctx.drawImage(img0,winWidth/2 + Math.sin(angel[j]) * 100-12, 450 - (200 - Math.cos(angel[j]) * 100)-58,24,115)
+          // ctx.translate(-winWidth/2, -250);
           // ctx.restore();
+          // ctx.fillStyle = "rgba(0,0,0,0.5)";//由于填充颜色只能用于一次路径或fill函数，所以需放在循环内
+          // ctx.beginPath();
+          // ctx.moveTo(winWidth/2 + Math.sin(angel[j]) * 200, 450 - (200 * (1 - Math.cos(angel[j]))));
+          // ctx.lineTo(winWidth/2 + Math.sin(angel[j]) * 100, 450 - (200 - Math.cos(angel[j]) * 100));
+          // ctx.fill();
 
-
-          ctx.fillStyle = "rgba(0,0,0,0.5)";//由于填充颜色只能用于一次路径或fill函数，所以需放在循环内
-          ctx.beginPath();
-          ctx.moveTo(winWidth/2 + Math.sin(angel[j]) * 200, 450 - (200 * (1 - Math.cos(angel[j]))));
-          ctx.lineTo(winWidth/2 + Math.sin(angel[j]) * 100, 450 - (200 - Math.cos(angel[j]) * 100));
-          ctx.fill();
-          ctx.stroke();
-          ctx.closePath();
         }
          ctx.drawImage(img,396,0,396,394,  (winWidth-cirradius*2)/2,150,cirradius*2,cirradius*2);
       }
@@ -97,8 +93,6 @@
       function mapact() {
         canvas=document.getElementById("canvas");
         ctx=canvas.getContext("2d");
-
-
         if(!over) {
           ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
           ctx.save();
@@ -116,81 +110,49 @@
       /**
        * 向上移动的小球
        * **/
-      function nailact(i){
+
+      function nailacts(i){
+        // console.log(i)
         ctx.fillStyle="rgba(0,0,0,0.5)";
         if((350-(n+1)*speed)>=215) {
-          // 向 上 移 动 的 小 球
-          ctx.beginPath();
-          ctx.arc(winWidth/2 + Math.sin(canalpha) * (350 - n * speed), 600 - (350 - Math.cos(canalpha) * (350 - n * speed)), smciradius, 0, Math.PI * 2, true);
-          ctx.closePath();
-          ctx.fill();
-          ctx.fillStyle = "#FFFFFF";
-          ctx.fillText(i, 247 + Math.sin(canalpha) * (350-n*speed), 605 - (350 - Math.cos(canalpha) * (350 - n * speed)));
+          ctx.save()
+          var img0=new Image();
+          img0.src="https://ifish.im/games/jfcd/images/cutitinfipt1-sheet0.png";
+          ctx.translate(winWidth/2,600);
+          ctx.rotate(Math.PI);
+          if(nums === 0){
+            ctx.drawImage(img0,-12,-50,24,115);
+          }else if(nums === i){
+            numsi++
+            console.log(numsi)
+            ctx.drawImage(img0,-12,-(50-numsi*10),24,115);
+            if(numsi ===22){
+              numsi = 19
+            }
+          }
+          nums = i
+          ctx.restore()
           n++;
-        }else{//
-          // ctx.beginPath();
-          //      ctx.arc(250 + Math.sin(canalpha) * 215, 600 - (350 - Math.cos(canalpha) * 215), smciradius, 0, Math.PI * 2, true);
-          //      ctx.moveTo(250+ Math.sin(canalpha) * 200,450-(200*(1 - Math.cos(canalpha))));
-          //      ctx.lineTo(250+ Math.sin(canalpha) * 100, 450-(200 - Math.cos(canalpha) *100));
-          //      ctx.fill();
-          //      ctx.stroke();
-          //      ctx.closePath();
-          //      ctx.fillStyle = "#FFFFFF";
-          //      ctx.fillText(i, 247 + Math.sin(canalpha) *215, 605 - (350 - Math.cos(canalpha) * 215));/** / * 尝试画面无闪顿的方法*/
+        }else{ //
+
           angel[i]=canalpha;
           num++;
           n=0;
           ins=false;
         }
       }
-
       /**
-       * 绘制插在上面的小球
+       * 绘制下面的小球
        * **/
-      function drawNail(i){
-
-        ctx.save();
-         // ctx.translate(0,0)
-       // ctx.rotate(-canalpha/3)
-        // ctx.translate(-140,-140)
-        ctx.strokeStyle='rgb(99,99,99)'
-        ctx.strokeRect(winWidth/2,550,70,70)
-        // ctx.fillStyle="rgba(0,0,0,0.5)";
-        // ctx.beginPath();
-        // ctx.translate(winWidth/2+Math.sin(canalpha)*350,600-(1-Math.cos(canalpha))*350);
-        // ctx.translate(-winWidth/2+Math.sin(canalpha)*350,-600-(1-Math.cos(canalpha))*350);
-        // ctx.arc(winWidth/2+Math.sin(canalpha)*350,600-(1-Math.cos(canalpha))*350,smciradius,0,Math.PI*2,true);
-        //
-        // ctx.closePath();
-        // ctx.fill();
-        // ctx.fillStyle="#000000";
-        // ctx.fillText(i,winWidth/2+Math.sin(canalpha)*350,605-(1-Math.cos(canalpha))*350);
-        ctx.restore();
-
-
-        //
-        // var img0=new Image();
-        // img0.src="https://ifish.im/games/jfcd/images/cutitinfipt1-sheet0.png";
-        //
-        // console.log(winWidth/2+Math.sin(canalpha)*350,600-(1-Math.cos(canalpha))*350,smciradius)
-        // // ctx.translate(winWidth/2+Math.sin(canalpha)*350-12,540-(1-Math.cos(canalpha))*350);
-        // // ctx.rotate(-canalpha);
-        // ctx.save();
-        // ctx.translate(0,0);
-        // ctx.rotate(0);
-        // ctx.drawImage(img0,0,0,24,115);
-        // //ctx.translate(-12,-12);
-        // ctx.restore();
-        // ctx.translate(-winWidth/2, -250);
-        // ctx.translate(-winWidth/2+Math.sin(canalpha)*350-12,-540-(1-Math.cos(canalpha))*350);
-
-        // ctx.translate(winWidth/2, 250);
-        // ctx.rotate(canalpha);
-        // ctx.translate(-winWidth/2, -250);
+       function drawNails(i){
+         ctx.save()
+        var img0=new Image();
+        img0.src="https://ifish.im/games/jfcd/images/cutitinfipt1-sheet0.png";
+        ctx.translate(winWidth/2,600)
+        ctx.rotate(Math.PI);
+        ctx.drawImage(img0,-12,-50,24,115);
+        ctx.restore()
       }
-
-
-
 
 
 
@@ -201,19 +163,16 @@
       function overgame()
       {
         for(var j=0;j<angel.length;j++) {
-          if ((Math.abs(Math.sin((angel[num-1] - angel[j]) / 2))<3/43)&&(j!=num-1)) {
+          if ((Math.abs(Math.sin((angel[num-1] - angel[j]) / 2))<3/43)&&(j!=num-1)) {  // 控制间隔密度
             over = true;
           }
         }
       }
-
-
       window.onload=function(){
         mapact();
         ani=true;//开启动画
         INTERID=setInterval(mapact,30); // 30ms  1000/30 帧数FPS  人眼24PFS
       }
-
 
       document.getElementById("canvas").addEventListener('click',function(){
         if(ani){
@@ -223,7 +182,6 @@
         }
       })
 
-
       /**
        * 检测窗口发生变化 改变转盘的样式
       **/
@@ -231,7 +189,6 @@
         mapact();
         console.log('窗口发生变化')
       })
-
     }
   }
 </script>

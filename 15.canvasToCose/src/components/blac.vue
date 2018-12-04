@@ -17,13 +17,15 @@
         ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
         ctx.translate(140,140)
         ctx.rotate(canalpha)
-         ctx.translate(-140,-140)
+         // ctx.translate(-140,-140)
         let img = new Image()
         img.src = 'https://ifish.im/games/jfcd/images/cutitinfipt1-sheet0.png'
         ctx.drawImage(img,140,140,24,115)
-        ads()
+        //
         ctx.restore()
       }
+
+
       function ads(){
         ctx.save()
         ctx.translate(140,140)
@@ -33,9 +35,11 @@
         ctx.strokeRect(0,0,90,90)
         ctx.restore()
       }
+
+
       function adss(){
         ctx.save()
-        ctx.translate(140,140)
+        ctx.translate(40,40)
         ctx.rotate(-canalpha/3)
         // ctx.translate(-140,-140)
         ctx.strokeStyle='rgb(99,99,99)'
@@ -44,7 +48,7 @@
       }
       setInterval(()=>{
         ad()
-
+        ads()
         adss()
         canalpha += Math.PI / speed2;
       },30)
