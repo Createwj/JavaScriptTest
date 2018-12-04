@@ -68,7 +68,7 @@
         ctx.restore();
         ctx.closePath();
 
-        // 使用 for 循环去 插进去 内容 //
+        // 使用 for 循环去 插进去 内容
         for (var j = 1; j <= angel.length; j++) {
           console.log(angel)
           // ctx.arc(winWidth/2, 250, cirradius, 0, Math.PI * 2, true);
@@ -84,6 +84,7 @@
 
         }
          ctx.drawImage(img,396,0,396,394,  (winWidth-cirradius*2)/2,150,cirradius*2,cirradius*2);
+        ctx.closePath();
       }
 
 

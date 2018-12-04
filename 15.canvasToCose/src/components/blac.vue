@@ -17,15 +17,14 @@
         ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
         ctx.translate(140,140)
         ctx.rotate(canalpha)
-         // ctx.translate(-140,-140)
+         ctx.translate(-140,-140)
         let img = new Image()
         img.src = 'https://ifish.im/games/jfcd/images/cutitinfipt1-sheet0.png'
         ctx.drawImage(img,140,140,24,115)
         //
         ctx.restore()
       }
-
-
+      
       function ads(){
         ctx.save()
         ctx.translate(140,140)
