@@ -1,5 +1,10 @@
-ALL5   koa2 node mongodb react-native canvas vue react angule webpack  小程序  pwa  nginx
-exect    2    2     2          1         2    4    2      1     3        3     3      2
+ALL5   koa2 node mongodb react-native canvas vue react angule webpack  小程序  pwa  nginx  cocos2d-js  nuxt.js
+exect    2    2     2          1         2    4    2      1     3        3     3      2      0
+
+
+vue koa2 mongodb node(插件) 高仿美团
+
+cocos2d-js  51CTO 李宁游戏H5 2D
 
 
 <template>
@@ -15,7 +20,6 @@ exect    2    2     2          1         2    4    2      1     3        3     3
     mounted(){
       let winWidth = document.documentElement.clientWidth
       let winHeight =document.documentElement.clientHeight
-
       document.getElementById('canvas').setAttribute('width',`${winWidth}px`)
       document.getElementById('canvas').setAttribute('height',`${winHeight}px`)
       console.log(winWidth,winHeight)

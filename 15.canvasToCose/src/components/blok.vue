@@ -38,8 +38,6 @@
       var numsi = 19;
       function drawmap() {
         // ctx.save();ctx.restore();
-
-
         if(!ins) {
           drawNails(1);  //  绘制小球
         }else{
@@ -50,15 +48,12 @@
         ctx.rotate(canalpha);           // 设置旋转角度
         ctx.translate(-winWidth/2, -250);  // 设置画布中心
 
-
         // https://ifish.im/games/jfcd/images/roata-sheet0.png
         var img=new Image();
         var img0=new Image();
         img.src="https://ifish.im/games/jfcd/images/roata-sheet0.png";
         img0.src="https://ifish.im/games/jfcd/images/cutitinfipt1-sheet0.png";
-
         // 初始化木桶
-
 
         // 初始化刀子
         ctx.save();
@@ -83,7 +78,7 @@
           // ctx.fill();
 
         }
-         ctx.drawImage(img,396,0,396,394,  (winWidth-cirradius*2)/2,150,cirradius*2,cirradius*2);
+        ctx.drawImage(img,396,0,396,394,  (winWidth-cirradius*2)/2,150,cirradius*2,cirradius*2);
         ctx.closePath();
       }
 
@@ -112,7 +107,7 @@
        * 向上移动的小球
        * **/
 
-      function nailacts(i){
+      function nailacts(i) {
         // console.log(i)
         ctx.fillStyle="rgba(0,0,0,0.5)";
         if((350-(n+1)*speed)>=215) {
@@ -145,7 +140,7 @@
       /**
        * 绘制下面的小球
        * **/
-       function drawNails(i){
+       function drawNails(i) {
          ctx.save()
         var img0=new Image();
         img0.src="https://ifish.im/games/jfcd/images/cutitinfipt1-sheet0.png";
@@ -161,21 +156,20 @@
       /**
        * 判断游戏是否结束
        * **/
-      function overgame()
-      {
+      function overgame() {
         for(var j=0;j<angel.length;j++) {
           if ((Math.abs(Math.sin((angel[num-1] - angel[j]) / 2))<3/43)&&(j!=num-1)) {  // 控制间隔密度
             over = true;
           }
         }
       }
-      window.onload=function(){
+      window.onload=function() {
         mapact();
         ani=true;//开启动画
         INTERID=setInterval(mapact,30); // 30ms  1000/30 帧数FPS  人眼24PFS
       }
 
-      document.getElementById("canvas").addEventListener('click',function(){
+      document.getElementById("canvas").addEventListener('click',function() {
         if(ani){
           ins=true;
         }else{

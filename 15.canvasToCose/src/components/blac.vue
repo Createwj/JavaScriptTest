@@ -21,10 +21,9 @@
         let img = new Image()
         img.src = 'https://ifish.im/games/jfcd/images/cutitinfipt1-sheet0.png'
         ctx.drawImage(img,140,140,24,115)
-        //
         ctx.restore()
       }
-      
+
       function ads(){
         ctx.save()
         ctx.translate(140,140)

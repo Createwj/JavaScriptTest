@@ -7,6 +7,7 @@ import animat from '@/components/animat'
 import blok from '@/components/blok'
 import eart from '@/components/eart'
 import blac from '@/components/blac'
+import log from '@/components/log'
 
 Vue.use(Router)
 
@@ -30,6 +31,10 @@ export default new Router({
       path: '/a',
       name: 'indexs',
       component: indexs
+    },{
+      path: '/log',
+      name: 'log',
+      component: log
     },{
       path: '/blok',
       name: 'blok',
