@@ -15,7 +15,11 @@ export default {
   mounted(){
     var canvas = document.getElementById('canvas');
     var ctx = canvas.getContext('2d');
-
+    var  canvasBuffer = document.createElement("canvas");
+    canvasBuffer.width = canvas.width;
+    canvasBuffer.height = canvas.height;
+    var  contextBuffer = canvasBuffer.getContext("2d");
+    // document.body.appendChild(canvasBuffer)
     /**
      * 位置 宽高 长方形
      * **/
@@ -178,25 +182,46 @@ export default {
   //   /**
   //    * 绘制图片  drawImage  Patterns
   //   **/
-    let img = new Image();
-    img.src = 'https://mdn.mozillademos.org/files/222/Canvas_createpattern.png';
-    img.onload = function() {
-      let ptrn = ctx.createPattern(img, 'repeat');
-      ctx.fillStyle = ptrn;  // 填充使用的是ctx创建的图片
-      ctx.fillRect(100, 150, 150, 150);  // 坐标(100,150) 大小(150,150)
-    }
+  //   let img = new Image();
+  //   img.src = 'https://mdn.mozillademos.org/files/222/Canvas_createpattern.png';
+  //   img.onload = function() {
+  //     let ptrn = ctx.createPattern(img, 'repeat');
+  //     ctx.fillStyle = ptrn;  // 填充使用的是ctx创建的图片
+  //     ctx.fillRect(100, 150, 150, 150);  // 坐标(100,150) 大小(150,150)
+  //   }
     //
-    // var img = new Image();
-    // img.onload = function(){
-    //   ctx.drawImage(img,0,0);
-    //   // ctx.beginPath();
-    //   // ctx.moveTo(30,96);
-    //   // ctx.lineTo(70,66);
-    //   // ctx.lineTo(103,76);
-    //   // ctx.lineTo(170,15);
-    //   // ctx.stroke();
-    // }
-    // img.src = 'https://mdn.mozillademos.org/files/222/Canvas_createpattern.png';
+    let speed = 1000
+    let canalpha = 0
+  function ad(){
+    contextBuffer.save()
+    contextBuffer.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+
+    contextBuffer.translate(100, 250);
+    contextBuffer.rotate(canalpha)
+    var img = new Image();
+     img.src = 'https://mdn.mozillademos.org/files/222/Canvas_createpattern.png';
+    img.onload = function(){}
+      contextBuffer.drawImage(img,0,0);
+      contextBuffer.beginPath();
+      contextBuffer.moveTo(30,96);
+      contextBuffer.lineTo(70,66);
+      contextBuffer.lineTo(103,76);
+      contextBuffer.lineTo(170,15);
+      contextBuffer.stroke();
+      contextBuffer.restore();
+      ctx.drawImage(canvasBuffer, 0, 0);
+
+
+
+  }
+
+  setInterval(()=>{
+    ad();
+    canalpha += Math.PI / speed;
+       },1/30)
+
+
   }
 }
 </script>
