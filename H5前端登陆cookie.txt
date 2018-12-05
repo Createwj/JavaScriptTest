@@ -1,24 +1,24 @@
-»·¾³µØÖ·
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·
 /home/uicpsadmin/apache-USTradeNew/webapps/USTrade
-±±¾©H5ÕýÊ½»·¾³  http://tc.bjjt.cn/customer_h5/index.htm  43.254.24.26:8080/USOrder/customerh5/index.htm
-±±¾©H5°¢ÀïÔÆ²âÊÔ»·¾³  http://123.57.153.223:8088/USOrder/customerh5/index.htm
-±±¾©H5ÕþÎñÔÆÔÆ²âÊÔ»·¾³  http://43.254.24.46/USOrder/customerh5/index.htm
+ï¿½ï¿½ï¿½ï¿½H5ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½  http://tc.bjjt.cn/customer_h5/index.htm  43.254.24.26:8080/USOrder/customerh5/index.htm
+ï¿½ï¿½ï¿½ï¿½H5ï¿½ï¿½ï¿½ï¿½ï¿½Æ²ï¿½ï¿½Ô»ï¿½ï¿½ï¿½  http://123.57.153.223:8088/USOrder/customerh5/index.htm
+ï¿½ï¿½ï¿½ï¿½H5ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ²ï¿½ï¿½Ô»ï¿½ï¿½ï¿½  http://43.254.24.46/USOrder/customerh5/index.htm
 
-¹þ¶û±õ°¢ÀïÔÆ²âÊÔºóÌ¨·ÃÎÊµØÖ·  http://139.129.110.7:8080/USTrade/web/pages/frame.htm
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ²ï¿½ï¿½Ôºï¿½Ì¨ï¿½ï¿½ï¿½Êµï¿½Ö·  http://139.129.110.7:8080/USTrade/web/pages/frame.htm
 
-±±¾©°¢ÀïÔÆ²âÊÔºóÌ¨·ÃÎÊµØÖ·  http://123.57.153.223:8088/USOrder/web/pages/login.htm
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ²ï¿½ï¿½Ôºï¿½Ì¨ï¿½ï¿½ï¿½Êµï¿½Ö·  http://123.57.153.223:8088/USOrder/web/pages/login.htm
 
-±±¾©ÕþÎñÔÆºóÌ¨·ÃÎÊµØÖ· http://43.254.24.46/USOrder/web/pages/login.htm
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æºï¿½Ì¨ï¿½ï¿½ï¿½Êµï¿½Ö· http://43.254.24.46/USOrder/web/pages/login.htm
 
 http://git.benefitunion.cn/users/sign_in
 
-python×ÊÔ´
+pythonï¿½ï¿½Ô´
 https://github.com/cd-dongzi/free-programming-books-zh_CN#python
 
 linux
 https://linuxtools-rst.readthedocs.io/zh_CN/latest/
 
-·ÖÏíÉçÇø
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 https://www.fragmentwall.com/trending
 
 function setCookie(e, r) {

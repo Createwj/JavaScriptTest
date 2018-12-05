@@ -11,25 +11,23 @@
 </template>
 
 <script>
-    export default {
-        name: "log",
-      data(){
-          return{
-            name:'',
-            pwa:''
-          }
-      },
-      mounted(){
-
-      },
-      methods:{
-          login(){
-            console.log(this.name)
-            console.log(this.pwa)
-
-          }
+  export default {
+    name: "log",
+    data(){
+      return{
+        name:'',
+        pwa:''
+      }
+    },
+    mounted(){
+    },
+    methods:{
+      login(){
+        console.log(this.name)
+        console.log(this.pwa)
       }
     }
+  }
 </script>
 
 <style scoped>

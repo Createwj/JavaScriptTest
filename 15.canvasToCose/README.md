@@ -2,6 +2,8 @@ ALL5   koa2 node mongodb react-native canvas vue react angule webpack  小程序
 exect    2    2     2          1         2    4    2      1     3        3     3      2      0
 
 
+react-native 原声app开发成本过高 使用react开发替代方案 节约成本
+
 vue koa2 mongodb node(插件) 高仿美团
 
 cocos2d-js  51CTO 李宁游戏H5 2D

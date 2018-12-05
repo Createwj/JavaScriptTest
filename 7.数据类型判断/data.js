@@ -1,4 +1,4 @@
-// typeof判断类型
+// typeof 判断类型
 
 // 可以识别--- Number  String  boolean  undefined  Symbol function
 // 无法识别--- object null Array
@@ -16,7 +16,8 @@ console.log(typeof function(){})
 
 
 //constructor
-//---无法识别null  undefined
+//---无法识别null  undefined  判断的时候 会报错
+
 console.log(true.constructor)
 let a = 2;
 console.log(a.constructor)
@@ -41,6 +42,7 @@ console.log(i.constructor)
 
 
 //Object.prototype.toString.call
+
 console.log(toString.call(1))
 console.log(toString.call('1'))
 console.log(toString.call(false))

@@ -2,7 +2,6 @@
 <div class="wrapper">
   <div id="info"></div>
   <canvas id="canvas" width="700px" height="700px"></canvas>
-
 </div>
 </template>
 <script>
@@ -149,9 +148,6 @@
         ctx.drawImage(img0,-12,-50,24,115);
         ctx.restore()
       }
-
-
-
 
       /**
        * 判断游戏是否结束
